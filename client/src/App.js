@@ -1,11 +1,11 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
-import AppBar from '@mui/material/AppBar';
+import { Typography, AppBar } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
 import VideoPlayer from './components/VideoPlayer';
-import Options from './components/Options';
+import Sidebar from './components/Options';
 import Notifications from './components/Notifications';
 
-import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
       width: '600px',
       border: '2px solid black',
   
-    //   [theme.breakpoints.down('xs')]: {
-    //     width: '90%',
-    //   },
+      [theme.breakpoints.down('xs')]: {
+        width: '90%',
+      },
     },
     image: {
       marginLeft: '15px',
@@ -41,9 +41,9 @@ const App = () => {
                 <Typography variant="h2" align="center">Video Chat</Typography>
             </AppBar>
             <VideoPlayer />
-            <Options>
+            <Sidebar>
                 <Notifications />
-            </Options>
+            </Sidebar>
         </div>
     )
 }
